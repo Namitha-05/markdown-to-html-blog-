@@ -19,7 +19,7 @@ jobs:
           pandoc README.md -f markdown -t html -s -o output/index.html
 
       - name: Upload HTML as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: html-blog
           path: output/index.html
