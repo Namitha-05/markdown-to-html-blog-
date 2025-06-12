@@ -21,8 +21,4 @@ jobs:
           mkdir docs
           pandoc README.md -f markdown -t html -s -H style.css -o docs/index.html
 
-      - name: Upload HTML as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: html-blog
-          path: docs/index.html
+    
