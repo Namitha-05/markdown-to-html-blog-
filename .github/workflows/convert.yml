@@ -19,7 +19,7 @@ jobs:
       - name: Convert Markdown to HTML
         run: |
           mkdir output
-          pandoc README.md -f markdown -t html -s -o output/index.html
+          pandoc README.md -f markdown -t html -s -H style.css -o output/index.html
 
       - name: Upload HTML as artifact
         uses: actions/upload-artifact@v4
