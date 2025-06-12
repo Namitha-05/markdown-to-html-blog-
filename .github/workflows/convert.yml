@@ -1,0 +1,25 @@
+name: Markdown to HTML
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Convert Markdown to HTML
+        run: |
+          mkdir output
+          pandoc README.md -f markdown -t html -s -o output/index.html
+
+      - name: Upload HTML as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: html-blog
+          path: output/index.html
