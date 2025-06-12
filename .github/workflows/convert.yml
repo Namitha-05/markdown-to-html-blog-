@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: html-blog
-          path: output/index.html
+          path: docs/index.html
